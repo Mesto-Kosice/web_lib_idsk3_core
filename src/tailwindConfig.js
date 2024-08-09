@@ -3,15 +3,33 @@ module.exports = {
   theme: {
     colors: {
       transparent: 'transparent',
-      white: '#FFFFFF',
-      black: '#000000',
+      white: {
+        DEFAULT: '#FFFFFF',
+        10: 'rgba(255, 255, 255, 0.1)',
+        40: 'rgba(255, 255, 255, 0.4)',
+        70: 'rgba(255, 255, 255, 0.7)'
+      },
+      black: {
+        DEFAULT: '#000000',
+        10: 'rgba(0, 0, 0, 0.1)',
+        40: 'rgba(0, 0, 0, 0.4)',
+        70: 'rgba(0, 0, 0, 0.7)'
+      },
       blue: {
-        100: '#EFF5FE',
-        200: '#C3D9F9',
-        300: '#88B3F6',
-        400: '#126DFF',
-        500: '#0B4199',
-        600: '#072C66'
+        100: '#EEF4FB',
+        200: '#CCDFF3',
+        300: '#99BFE6',
+        400: '#5595D6',
+        500: '#134E81',
+        600: '#03233F'
+      },
+      yellow: {
+        100: '#FFFBE6',
+        200: '#FEF2B4',
+        300: '#FDE469',
+        400: '#FCD205',
+        500: '#977E03',
+        600: '#594B07'
       },
       green: {
         100: '#F4F4EC',
@@ -71,6 +89,36 @@ module.exports = {
         return this.blue[100];
       },
 
+      get 'txt-black'() {
+        return this.black['DEFAULT'];
+      },
+      get 'txt-grey'() {
+        return this.neutral[600];
+      },
+      get 'txt-light-grey'() {
+        return this.neutral[300];
+      },
+      get 'txt-white'() {
+        return this.white['DEFAULT'];
+      },
+      get 'txt-dark'() {
+        return this.blue[600];
+      },
+      get 'txt-medium'() {
+        return this.blue[500];
+      },
+      get 'txt-light'() {
+        return this.blue[300];
+      },
+      get 'txt-primary'() {
+        return this.blue[400];
+      },
+
+      'txt-positive-dark': '#033608',
+      'txt-positive': '#078814',
+      'txt-warning-dark': '#4E0711',
+      'txt-warning': '#C3112B',
+
       'alert-warning': '#C3112B',
       'alert-warning-dark': '#4E0711',
       'alert-warning-medium': '#F8B5B9',
@@ -86,7 +134,12 @@ module.exports = {
       'alert-attention-medium': '#EBCFAA',
       'alert-attention-light': '#FAF4EC',
 
-      'focus-state': '#E06E00',
+      'sk-white': '#FFFFFF',
+      'sk-red': '#C3112B',
+      'sk-blue': '#1E4E9D',
+      'sk-grey': '#DDDEDE',
+
+      'focus-state': '#D96E00',
 
       get primary() {
         return this.blue[400];
